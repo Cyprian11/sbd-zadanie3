@@ -29,7 +29,7 @@ SELECT * FROM (SELECT * FROM products WHERE price BETWEEN 10 AND 20)orders  WHER
 
 
 SELECT * FROM customers JOIN orders ON orders.customer_id=customers.id;
-SELECT * FROM customers JOIN orders ON orders.customer_id=customers.id;
+SELECT COUNT(orders.id) FROM customers JOIN orders ON orders.customer_id=customers.id GROUP BY customer_id;  
 
  
 
