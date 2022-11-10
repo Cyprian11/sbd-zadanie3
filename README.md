@@ -29,7 +29,18 @@
 
 ## JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN, Self Join
 1. Pobierz dane klientów i dane o ich zamówieniach
-2. Pobierz dane wszystkich klientów i wyświet liczbę zamówień które złożyli
+2. Pobierz dane wszystkich klientów i wyświetl liczbę zamówień które złożyli
 3. Pobierz dane tylko tych klientów którzy złożyli zamówienie
 4. Pobierz dane zamówień wszystkich pracowników (użyj RIGHT JOIN)
 5. Stwórz pary klientów którzy są z tego samego miasta
+
+## LIMIT, OFFSET
+1. Pobierz ostatnie 10 zamówień.
+2. Pobierz zamówienia od 10 do 20.
+
+## ALL
+1. Top 10 najlepiej sprzedających się produktów
+2. Top 10 najlepszych klientów, z sumą i liczbą ich wszystkich zamówień
+3. Najlepiej sprzedająca się kategoria
+4. Sumy sprzedazy poszczególnych kategorii
+5. Pobierz klientów którzy zrobili zakupy po 1996-10-01 ale nie zrobili ich przed 1996-10-01
