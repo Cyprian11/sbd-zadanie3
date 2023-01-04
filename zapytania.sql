@@ -30,11 +30,27 @@ SELECT * FROM (SELECT * FROM products WHERE price BETWEEN 10 AND 20)orders  WHER
 
 SELECT * FROM customers JOIN orders ON orders.customer_id=customers.id;
 SELECT COUNT(orders.id) FROM customers JOIN orders ON orders.customer_id=customers.id GROUP BY customer_id;  
-
- 
-
-
-
+SELECT * FROM customers ;
+SELECT * FROM orders RIGHT JOIN employees ON orders.employee_id=employees.id;
+SELECT * FROM customers WHERE customers.id<>customers.id AND customers.city=customers.city ORDER BY city;
 
 
 
+
+
+SELECT * FROM orders LIMIT 10 OFFSET 15;
+SELECT * FROM orders LIMIT 10 OFFSET 10;
+
+
+
+
+
+
+
+
+SELECT COUNT(customersid), country FROM customer GROUP BY country HAVING COUNT(customerid) > 5;
+SELECT * FROM customers HAVING COUNT (orders.customer_id)>1;
+SELECT employees.last_name, COUNT (orders.id) AS NumberOfOrders FROM (orders INNER JOIN employees ON orders.id = employees.id) GROUP BY lastname HAVING COUNT(orders.id) > 10;
+SELECT employees.last_name, COUNT(orders.id) AS NumberOfOrders FROM orders INNER JOIN employees ON orders.employee_id = employees.id WHERE last_name = 'Davolio' OR last_name = 'Fuller' GROUP BY last_name HAVING COUNT(orders.id) > 25;
+SELECT * FROM suppliers WHERE EXISTS (SELECT * FROM products WHERE price<20);
+SELECT * FROM suppliers WHERE EXISTS (SELECT * FROM products WHERE price=22);
