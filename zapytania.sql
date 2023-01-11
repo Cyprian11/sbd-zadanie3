@@ -54,3 +54,23 @@ SELECT employees.last_name, COUNT (orders.id) AS NumberOfOrders FROM (orders INN
 SELECT employees.last_name, COUNT(orders.id) AS NumberOfOrders FROM orders INNER JOIN employees ON orders.employee_id = employees.id WHERE last_name = 'Davolio' OR last_name = 'Fuller' GROUP BY last_name HAVING COUNT(orders.id) > 25;
 SELECT * FROM suppliers WHERE EXISTS (SELECT * FROM products WHERE price<20);
 SELECT * FROM suppliers WHERE EXISTS (SELECT * FROM products WHERE price=22);
+
+
+
+
+SELECT * FROM products WHERE product_id=ANY (SELECT product_id FROM order_details WHERE quantity=10);
+SELECT * FROM products WHERE product_id=ANY (SELECT product_id FROM order_details WHERE quantity<22);
+SELECT ALL name FROM products WHERE TRUE;
+SELECT * FROM products,orders_details WHERE product_id=ALL (SELECT product_id FROM orders_details WHERE quantity=10);
+
+
+
+
+
+
+SELECT order_id,quantity, CASE 
+WHEN quantity>30 THEN 'liczba sztuk jest wieksza niz 30'
+WHEN quantity=30 THEN 'liczba sztuk jest rowna 30'
+ELSE 'liczba sztuk jest mniejsza od 30'
+END AS WYNIK
+FROM orders_details;
